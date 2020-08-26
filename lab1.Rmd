@@ -1,6 +1,6 @@
 ---
 title: "Demo RStudio and EDA"
-author: Merlise Clyde
+author: Cathy Lee
 output:
   pdf_document: default
   html_notebook: default
@@ -101,6 +101,7 @@ look at the first 5 columns.
 
 ```{r, fig.width=8}
 pairs(College[, 1:5])
+
 ```
 
 We can also look at this using the `ggpairs` function.
@@ -184,7 +185,7 @@ my.bp # displays the boxplots
 
 ### Conditional Plots
 
-Let's look at the distribution of Out of state tuition versus Elite status for Private versun Public universities using _conditional plots_
+Let's look at the distribution of Out of state tuition versus Elite status for Private versus Public universities using _conditional plots_
 
 ```{r, fig.width=8}
 coplot(Outstate ~ Elite | Private, data=College)
@@ -213,8 +214,8 @@ Use the `lm` function as described in class to fit a linear model with `Apps` as
 
 ```{r}
 # add lm code here
-# 
-# mymodel = lm(Apps ~ XXX, data=College)
+
+mymodel = lm(Apps ~ Top10perc, data=College)
 ```
 
 
@@ -222,7 +223,7 @@ For the fitted model, produce diagnostic plots
 
 ```{r}
 # add diagnostic plots here
-# plot(mymodel)
+plot(mymodel)
 ```
 
 Discuss whether the model seems appropriate in terms of assumptions.
